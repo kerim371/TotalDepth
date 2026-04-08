@@ -121,7 +121,10 @@ def read68(theFile):
 
 def readBytes68(arg):
     """Returns a Representation Code 68 value from a bytes object."""
-    return from68(STRUCT_RC_68.unpack(arg)[0])
+    try:
+        return from68(STRUCT_RC_68.unpack(arg)[0])
+    except Exception:
+        return float('nan')
 
 def writeBytes68(v):
     """Converts a value to a Rep Code 68 and returns the bytes."""

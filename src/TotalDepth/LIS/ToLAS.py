@@ -125,7 +125,7 @@ def write_well_information_section(lis_logical_file: LisLogicalFile,
         ],
         [
             f'NULL.',
-            f'{log_pass.null_value:{float_format}}',
+            f'{getattr(log_pass, "null_value", -999.25):{float_format}}',
             ': NULL VALUE',
         ],
     ]
